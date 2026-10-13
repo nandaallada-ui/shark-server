@@ -29,7 +29,7 @@ app.post('/api/contact', async (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: 'nandaallada2007@gmail.com',
+        to: process.env.GMAIL_USER,
         subject: `New message from Shark Site: ${name}`,
         text: `You have received a new message from your shark website contact form.\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`
     };
