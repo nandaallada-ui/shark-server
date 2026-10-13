@@ -1,7 +1,6 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
-const path = require('path'); 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,10 +8,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors()); 
 
-app.use(express.json());
-app.use(cors());
-app.use(express.static(path.join(__dirname, 'part7'))); // launches site w node serv made
-
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
