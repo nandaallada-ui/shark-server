@@ -2,12 +2,19 @@
   "name": "shark-server",
   "version": "1.0.0",
   "main": "server.js",
+  "homepage": "/repo-name",
+
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "nodemailer": "^10.1.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
