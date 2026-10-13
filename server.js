@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS
+        user: 'nandaallada2007@gmail.com',
+        pass: 'zlfs lrtb ardg cosb' 
     }
 });
 
@@ -29,7 +29,7 @@ app.post('/api/contact', async (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: process.env.GMAIL_USER,
+        to: 'nandaallada2007@gmail.com',
         subject: `New message from Shark Site: ${name}`,
         text: `You have received a new message from your shark website contact form.\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`
     };
